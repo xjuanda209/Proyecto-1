@@ -1,0 +1,45 @@
+# ui.py
+
+def solicitar_datos_usuario():
+    max_limite = 900
+    departamentos_validos = [
+    "AMAZONAS", "ANTIOQUIA", "ARAUCA", "ATLÁNTICO", "BOLÍVAR", "BOYACÁ", "CALDAS",
+    "CAQUETÁ", "CASANARE", "CAUCA", "CESAR", "CHOCÓ", "CÓRDOBA", "CUNDINAMARCA", 
+    "GUAINÍA", "GUAVIARE", "HUILA", "LA GUAJIRA", "MAGDALENA", "META",
+    "NARIÑO", "NORTE DE SANTANDER", "PUTUMAYO", "QUINDÍO", "RISARALDA", 
+    "SAN ANDRÉS Y PROVIDENCIA", "SANTANDER", "SUCRE", "TOLIMA", "VALLE",
+    "VAUPÉS", "VICHADA", "AMAZONAS", "ANTIOQUIA", "ARAUCA", "ATLÁNTICO", "BOLÍVAR", 
+    "BOYACÁ", "CALDAS", "CAQUETÁ", "CASANARE", "CAUCA", "CESAR", "CHOCÓ", "CÓRDOBA",
+    "CUNDINAMARCA", "GUAINÍA", "GUAVIARE", "HUILA", "LA GUAJIRA", "MAGDALENA", "META",
+    "NARIÑO", "NORTE DE SANTANDER", "PUTUMAYO", "QUINDÍO", "RISARALDA", 
+    "SAN ANDRÉS Y PROVIDENCIA", "SANTANDER", "SUCRE", "TOLIMA", "VALLE DEL CAUCA", 
+    "VAUPÉS", "VICHADA"
+    ]
+
+    nombre_departamento = input("Ingrese el nombre del departamento en mayusculas: ")
+    limite_registros_str = input("Ingrese el límite de registros: ")
+
+    if nombre_departamento not in departamentos_validos:
+        print("El nombre del departamento no es válido.")
+
+    # Validar la entrada del usuario
+    if limite_registros_str.isdigit():
+        limite_registros = int(limite_registros_str)
+       
+    else:
+        print("El número de registros debe ser un número entero.")
+        return None, None
+
+    if limite_registros > max_limite:
+        print(f"El número de registros no puede ser mayor a {max_limite}.")
+        return None, None
+
+    return nombre_departamento, limite_registros
+
+def mostrar_resultados(datos):
+    if datos.empty:
+        print("No se encontraron datos para los parámetros proporcionados.")
+    else:
+       datos.index = datos.index + 1
+       print(datos.to_string(index=True))
+       

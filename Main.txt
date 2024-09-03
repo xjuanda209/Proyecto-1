@@ -1,0 +1,19 @@
+# main.py
+
+from UI import solicitar_datos_usuario, mostrar_resultados
+from API import obtener_datos
+
+def main():
+    # Solicitar datos al usuario
+    nombre_departamento, limite_registros = solicitar_datos_usuario()
+
+    if nombre_departamento and limite_registros:
+        
+        # Obtener datos de la API
+        datos = obtener_datos(nombre_departamento, limite_registros)
+
+        # Mostrar los resultados
+        mostrar_resultados(datos)
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,43 @@
+# api.py
+
+import pandas as pd
+from sodapy import Socrata
+
+def obtener_datos(nombre_departamento, limite_registros):
+    # Conectar con la API de Datos Abiertos
+    # Inicializa el cliente Socrata para interactuar con la API pública de Datos Abiertos del gobierno colombiano.
+    # La URL base de la API es "www.datos.gov.co", y no se proporciona un token de autenticación (None).
+    client = Socrata("www.datos.gov.co", None)
+
+    # Realizar la consulta a la API
+    # Usa el cliente para enviar una solicitud GET a la API con el identificador del recurso "gt2j-8ykr".
+    # Limita el número de registros devueltos a `limite_registros` y filtra los datos para el `nombre_departamento`.
+    results = client.get("gt2j-8ykr", limit = limite_registros, departamento_nom= nombre_departamento)
+
+    # Convertir una lista de diccionarios 'results' en un DataFrame de pandas.
+    # Cada diccionario en 'results' se convierte en una fila del DataFrame,
+    # y las claves de los diccionarios se convierten en los nombres de las columnas.
+    results_df = pd.DataFrame.from_records(results)
+
+    if not results_df.empty:
+    #Filtrar las columnas requeridas (ajustar nombres según los nombres correctos)
+       # Define las columnas necesarias para el filtro
+        columnas_necesarias = [
+            "ciudad_municipio_nom",  # Ciudad de ubicación
+            "departamento_nom",      # Departamento
+            "sexo",                  # Sexo
+            "edad",                  # Edad
+            "fuente_tipo_contagio",  # Tipo
+            "estado",                # Estado
+        ]
+
+        # Filtrar el DataFrame 'results_df' para que solo contenga las columnas especificadas en 'columnas_necesarias'.
+        # El DataFrame resultante 'filtered_df' tendrá únicamente las columnas seleccionadas.
+        filtered_df = results_df[columnas_necesarias]
+
+        # Renombrar las columnas para una mejor legibilidad
+        filtered_df.columns = ["Ciudad de ubicación", "Departamento","Sexo", "Edad", "Tipo","Estado"]
+        return  filtered_df
+    
+    else:
+        return results_df
