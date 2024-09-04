@@ -8,7 +8,7 @@ A continuación se presentan las capturas de pantalla que muestran las evidencia
 
 ## Evidencia 2
 
-![Evidencia 2](./ruta/relativa/Evidencia%202.png)
+![Evidencia 2](https://github.com/xjuanda209/Proyecto-1/blob/main/Evidencia%202.png)
 
 ## Evidencia 3
 
