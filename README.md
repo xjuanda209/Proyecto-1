@@ -4,7 +4,7 @@ A continuación se presentan las capturas de pantalla que muestran las evidencia
 
 ## Evidencia 1
 
-![Evidencia 1](./ruta/relativa/Evidencia%201.png)
+![Evidencia 1](https://github.com/xjuanda209/Proyecto-1/blob/main/Evidencia%201.png)
 
 ## Evidencia 2
 
