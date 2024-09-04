@@ -9,7 +9,7 @@ La estructura se organiza de la siguiente manera:
 - **`API.py`**: Contiene las funciones relacionadas con la obtención de datos de la API.
 - **`Main.py`**: Define la función principal que se encarga de ejecutar el flujo principal del programa.
 - **`UI.py`**: Gestiona la interacción con el usuario, solicitando datos y mostrando resultados.
-- **`__pycache__`**: Carpeta generada automáticamente por Python para almacenar archivos de bytecode compilados(No esta monatdo en el poryecto pero si hay evidencia de este).
+- **`__pycache__`**: Carpeta generada automáticamente por Python para almacenar archivos de bytecode compilados(No esta montado en el poryecto pero si hay evidencia de este).
 
 # Evidencias del Proyecto
 
