@@ -12,4 +12,4 @@ A continuación se presentan las capturas de pantalla que muestran las evidencia
 
 ## Evidencia 3
 
-![Evidencia 3](./ruta/relativa/Evidencia%203.png)
+![Evidencia 3](https://github.com/xjuanda209/Proyecto-1/blob/main/Evidencia%203.png)
